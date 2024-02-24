@@ -26,3 +26,32 @@ const ChatInput = ({ sendMessage }) => {
 };
 
 export default ChatInput;
+
+
+// import { useState } from "react";
+// import io from "socket.io-client";
+
+// const socket = io();
+
+// const ChatInput = () => {
+//   const [message, setMessage] = useState("");
+
+//   const handleChange = (e) => {
+//     setMessage(e.target.value);
+//   };
+
+//   const handleSubmit = (e) => {
+//     e.preventDefault();
+//     socket.emit("message", message);
+//     setMessage("");
+//   };
+
+//   return (
+//     <form onSubmit={handleSubmit}>
+//       <input type="text" value={message} onChange={handleChange} />
+//       <button type="submit">Send</button>
+//     </form>
+//   );
+// };
+
+// export default ChatInput;
