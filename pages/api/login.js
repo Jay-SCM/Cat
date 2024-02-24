@@ -1,11 +1,11 @@
-// pages/api/auth.js
+// pages/api/login.js
 
 import mysql from 'mysql';
 
 // Configure MySQL connection
 const connection = mysql.createConnection({
     host: 'localhost',
-    user: 'Kliea',
+    user: 'root',
     password: 'Hisako1086',
     database: 'klieachat'
 });
@@ -31,3 +31,4 @@ export default function handler(req, res) {
         res.status(405).json({ error: 'Method Not Allowed' });
     }
 }
+

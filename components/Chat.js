@@ -1,21 +1,5 @@
-//components/Chat
-// import React from 'react';
-// import MessageList from './MessageList';
-// import ChatInput from './ChatInput';
+// components/Chat.js
 
-// const Chat = () => {
-//   return (
-//     <div className="chat-container">
-//       <MessageList />
-//       <ChatInput />
-//     </div>
-//   );
-// };
-
-// export default Chat;
-
-
-// components/ChatApp.js
 import React, { useState, useEffect } from 'react';
 import MessageList from './MessageList';
 import ChatInput from './ChatInput';
@@ -66,10 +50,67 @@ const Chat = () => {
 
   return (
     <div className="chat-container">
-      <MessageList messages={messages} />
+      {messages && <MessageList messages={messages} />}
       <ChatInput sendMessage={sendMessage} />
     </div>
   );
 };
 
 export default Chat;
+
+
+
+
+// import React, { useState, useEffect } from 'react';
+// import MessageList from './MessageList';
+// import ChatInput from './ChatInput';
+
+// const Chat = () => {
+//   const [messages, setMessages] = useState([]);
+
+//   useEffect(() => {
+//     fetchMessages();
+//   }, []);
+
+//   const fetchMessages = async () => {
+//     try {
+//       const response = await fetch('/api/messages');
+//       if (response.ok) {
+//         const data = await response.json();
+//         setMessages(data);
+//       } else {
+//         console.error('Failed to fetch messages:', response.statusText);
+//       }
+//     } catch (error) {
+//       console.error('Error fetching messages:', error);
+//     }
+//   };
+
+//   const sendMessage = async (messageContent) => {
+//     try {
+//       const response = await fetch('/api/messages', {
+//         method: 'POST',
+//         headers: {
+//           'Content-Type': 'application/json',
+//         },
+//         body: JSON.stringify({ message: messageContent }),
+//       });
+//       if (response.ok) {
+//         fetchMessages(); // Fetch updated messages after sending
+//       } else {
+//         console.error('Failed to send message:', response.statusText);
+//       }
+//     } catch (error) {
+//       console.error('Error sending message:', error);
+//     }
+//   };
+
+//   return (
+//     <div className="chat-container">
+//       <MessageList messages={messages} />
+//       <ChatInput sendMessage={sendMessage} />
+//     </div>
+//   );
+// };
+
+// export default Chat;
