@@ -12,7 +12,7 @@ const LandingPage = () => {
         </Link>
       </div>
       <div className="card">
-        <img src="/img.jpg" alt="Chat" />
+        <img src="/Ahri.jpg" alt="Chat" />
       </div>
     </div>
   );
